@@ -10,8 +10,14 @@ await runLogic()
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <CameraPicker />
-    <VideoPreview />
-    <IsbnNumbers />
+    <div className="flex flex-row ">
+      <div className="flex-grow">
+        <CameraPicker />
+        <VideoPreview />
+      </div>
+      <div>
+        <IsbnNumbers />
+      </div>
+    </div>
   </React.StrictMode>,
 )
