@@ -1,6 +1,6 @@
 import { useStore } from './store.ts'
 import { detectBarcode } from './detectBarcode.ts'
-import { addIsbnNumber } from './useIsbnStorage.ts'
+import { addScannedData } from './useScannedDataStorage.ts'
 import { beep } from './beep.ts'
 import { closeMediaSteam } from './mediaStreams.ts'
 
@@ -80,7 +80,7 @@ export async function runLogic() {
         if (isbnNumbers.length > 0) {
           beep()
         }
-        isbnNumbers.forEach((isbn) => addIsbnNumber(isbn))
+        isbnNumbers.forEach((isbn) => addScannedData(isbn))
       }, 1000)
       state.newIntervalIdentifier(intervalIdentifier)
     },

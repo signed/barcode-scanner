@@ -4,7 +4,7 @@ import './index.css'
 import { CameraPicker } from './CameraPicker.tsx'
 import { runLogic } from './logic.tsx'
 import { VideoPreview } from './VideoPreview.tsx'
-import { IsbnNumbers } from './IsbnNumbers.tsx'
+import { ScannedData } from './ScannedData.tsx'
 import { FormatSelect } from './FormatSelect.tsx'
 
 await runLogic()
@@ -21,7 +21,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <VideoPreview />
       </div>
       <div className="w-1/4">
-        <IsbnNumbers />
+        <ScannedData />
       </div>
     </div>
   </React.StrictMode>,
