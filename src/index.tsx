@@ -10,7 +10,6 @@ await runLogic()
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <div className="text-lg">Hello Vite!</div>
     <CameraPicker />
     <VideoPreview />
     <IsbnNumbers />
