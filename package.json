@@ -1,5 +1,5 @@
 {
-  "name": "bar-code-scanner",
+  "name": "@signed/bar-code-scanner",
   "private": true,
   "version": "0.0.0",
   "type": "module",
