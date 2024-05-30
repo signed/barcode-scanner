@@ -2,6 +2,7 @@ import { useStore } from './store.ts'
 import { detectIsbnIn } from './detectIsbnIn.ts'
 import { addIsbnNumber } from './useIsbnStorage.ts'
 import { beep } from './beep.ts'
+import { closeMediaSteam } from './mediaStreams.ts'
 
 async function readFrame(reader: ReadableStreamDefaultReader<VideoFrame>) {
   const { value: frame } = await reader.read()
@@ -15,9 +16,6 @@ async function readFrame(reader: ReadableStreamDefaultReader<VideoFrame>) {
 }
 
 export async function runLogic() {
-  const deviceInfos = await navigator.mediaDevices.enumerateDevices()
-  const cameras = deviceInfos.filter((info) => info.kind === 'videoinput')
-
   useStore.subscribe(
     (state) => state.camera.current,
     async (cur, _prev) => {
@@ -88,6 +86,11 @@ export async function runLogic() {
     },
   )
 
+  // ask for permission from the user
+  // has to be done before enumerating devices to get device ids and label
+  closeMediaSteam(await navigator.mediaDevices.getUserMedia({ video: true }))
+  const deviceInfos = await navigator.mediaDevices.enumerateDevices()
+  const cameras = deviceInfos.filter((info) => info.kind === 'videoinput')
   const state = useStore.getState()
   state.availableCameras(cameras)
   //state.selectCamera(cameras[0])
