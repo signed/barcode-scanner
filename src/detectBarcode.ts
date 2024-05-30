@@ -1,10 +1,10 @@
-export async function detectIsbnIn(image: ImageBitmap) {
+export async function detectBarcode(format: BarcodeFormat, image: ImageBitmap) {
   if (!('BarcodeDetector' in globalThis)) {
     console.log('Barcode Detector is not supported by this browser.')
     return []
   }
   const barcodeDetector = new BarcodeDetector({
-    formats: ['ean_13'],
+    formats: [format],
   })
   try {
     const detectedBarcodes = await barcodeDetector.detect(image)

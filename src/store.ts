@@ -13,6 +13,7 @@ interface State {
     intervalIdentifier: null | ReturnType<typeof globalThis.setInterval>
     image: 'no-image' | ImageBitmap
   }
+  format: BarcodeFormat
 }
 
 type Actions = {
@@ -22,6 +23,7 @@ type Actions = {
   switchReader: (reader: State['capture']['reader']) => void
   newIntervalIdentifier: (intervalIdentifier: State['capture']['intervalIdentifier']) => void
   newImage: (image: State['capture']['image']) => void
+  changeFormatTo: (format: State['format']) => void
 }
 
 export const useStore = create<State & Actions>()(
@@ -37,6 +39,7 @@ export const useStore = create<State & Actions>()(
         intervalIdentifier: null,
         image: 'no-image',
       },
+      format: 'ean_13',
       availableCameras: (cameras) =>
         set((state) => {
           state.camera.available = cameras
@@ -64,6 +67,11 @@ export const useStore = create<State & Actions>()(
       newImage: (image) => {
         set((state) => {
           state.capture.image = image
+        })
+      },
+      changeFormatTo: (format) => {
+        set((state) => {
+          state.format = format
         })
       },
     })),

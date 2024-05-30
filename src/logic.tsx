@@ -1,5 +1,5 @@
 import { useStore } from './store.ts'
-import { detectIsbnIn } from './detectIsbnIn.ts'
+import { detectBarcode } from './detectBarcode.ts'
 import { addIsbnNumber } from './useIsbnStorage.ts'
 import { beep } from './beep.ts'
 import { closeMediaSteam } from './mediaStreams.ts'
@@ -76,7 +76,7 @@ export async function runLogic() {
         if (image === 'no-frame') {
           return
         }
-        const isbnNumbers = await detectIsbnIn(image)
+        const isbnNumbers = await detectBarcode(useStore.getState().format, image)
         if (isbnNumbers.length > 0) {
           beep()
         }
