@@ -18,6 +18,12 @@ export const useIsbnStorage = create<State>()(
   ),
 )
 
+export const clearScannedData = () => {
+  useIsbnStorage.setState((state) => {
+    state.isbnNumbers = []
+  })
+}
+
 export const addIsbnNumber = (isbnNumber: string) => {
   const state = useIsbnStorage.getState()
   if (state.isbnNumbers.includes(isbnNumber)) {
