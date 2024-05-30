@@ -11,8 +11,10 @@ await runLogic()
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <div className="flex flex-row ">
-      <div className="flex-grow">
+      <div className="flex-col">
         <CameraPicker />
+      </div>
+      <div className="flex-grow">
         <VideoPreview />
       </div>
       <div>
