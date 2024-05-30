@@ -43,7 +43,7 @@ export const useStore = create<State & Actions>()(
         }),
       selectCamera: (camera) => {
         set((state) => {
-          state.camera.current = camera
+          state.camera.current = state.camera.current === camera ? 'no-selection' : camera
         })
       },
       switchMediaStream: (mediaStream) => {

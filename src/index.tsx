@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
-import { CameraPicker } from './cameraPicker.tsx'
+import { CameraPicker } from './CameraPicker.tsx'
 import { runLogic } from './logic.tsx'
 import { VideoPreview } from './VideoPreview.tsx'
 import { IsbnNumbers } from './IsbnNumbers.tsx'
