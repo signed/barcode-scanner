@@ -1,4 +1,5 @@
 import { useStore } from './store.ts'
+const baseurl = import.meta.env.BASE_URL
 
 const formats = await BarcodeDetector.getSupportedFormats()
 
@@ -13,7 +14,7 @@ export const FormatSelect = () => {
         ))}
       </select>
       <div>
-        <img alt={format} src={`/${formatToImage(format)}`} />
+        <img alt={format} src={`${baseurl}${formatToImage(format)}`} />
       </div>
     </div>
   )
