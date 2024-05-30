@@ -1,6 +1,8 @@
-# React + TypeScript + Vite + Testing-Library template
-https://developer.mozilla.org/en-US/docs/Web/API/Barcode_Detection_API
+# [Barcode Scanner](https://signed.github.io/barcode-scanner/)
 
+Uses the experimental [Barcode Detection API](https://developer.mozilla.org/en-US/docs/Web/API/Barcode_Detection_API) available in chromium based browsers.
+
+# Resources
 [5 ways to save an image from your webcam](https://webrtchacks.com/still-image-from-webcam-stream-approaches/)
 - https://github.com/webrtcHacks/still-image-from-webcam-stream-approaches
 
