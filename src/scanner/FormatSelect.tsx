@@ -1,4 +1,4 @@
-import { useStore } from './store.ts'
+import { useStore } from '../store.ts'
 const baseurl = import.meta.env.BASE_URL
 
 const formats = await BarcodeDetector.getSupportedFormats()

@@ -1,8 +1,8 @@
-import { useStore } from './store.ts'
+import { useStore } from '../store.ts'
 import { detectBarcode } from './detectBarcode.ts'
-import { addScannedData } from './useScannedDataStorage.ts'
+import { addScannedData } from '../useScannedDataStorage.ts'
 import { beep } from './beep.ts'
-import { closeMediaSteam } from './mediaStreams.ts'
+import { closeMediaSteam } from '../mediaStreams.ts'
 
 async function readFrame(reader: ReadableStreamDefaultReader<VideoFrame>) {
   const { value: frame } = await reader.read()

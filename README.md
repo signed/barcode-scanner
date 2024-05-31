@@ -10,4 +10,4 @@ Uses the experimental [Barcode Detection API](https://developer.mozilla.org/en-U
 # Book Meta-Data sources
 - https://github.com/bayang/jelu
 - https://www.googleapis.com/books/v1/volumes?q=isbn:<insert_isbn_here> (might require an api key to avoid rate limiting)
-  - https://www.googleapis.com/books/v1/volumes?q=isbn:9780143118442
+  - https://www.googleapis.com/books/v1/volumes?q=isbn:9780995658622

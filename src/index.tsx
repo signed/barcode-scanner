@@ -2,10 +2,10 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 import { CameraPicker } from './CameraPicker.tsx'
-import { runLogic } from './logic.tsx'
+import { runLogic } from './scanner/logic.tsx'
 import { VideoPreview } from './VideoPreview.tsx'
 import { ScannedData } from './ScannedData.tsx'
-import { FormatSelect } from './FormatSelect.tsx'
+import { FormatSelect } from './scanner/FormatSelect.tsx'
 
 await runLogic()
 
