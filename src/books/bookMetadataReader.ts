@@ -2,7 +2,7 @@ import { z } from 'zod'
 import { resolve } from 'node:path'
 import { spawnSync } from 'node:child_process'
 import { existsSync, readFileSync, writeFileSync } from 'node:fs'
-import { CalibreMetadata, parse } from './CalibreMetadata.ts'
+import { type CalibreMetadata, parse } from './CalibreMetadata.ts'
 
 const IsbnSchema = z.array(z.string())
 
